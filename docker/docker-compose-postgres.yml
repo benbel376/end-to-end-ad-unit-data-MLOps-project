@@ -1,0 +1,23 @@
+version: '3.6'
+services: 
+    postgres:
+        build: ./dockerfiles/postgres
+        restart: always
+        env_file: ./.env/postgres.env
+        ports: 
+            - "5432:5432"
+        volumes: 
+            - ../scripts/sql/postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+            
+    pgadmin-compose:
+        image: dpage/pgadmin4
+        env_file: ./.env/postgres.env   
+        ports: 
+            - "16543:80"
+        depends_on: 
+            - postgres    
+
+networks: 
+  default: 
+    external: 
+      name: local_network_1
