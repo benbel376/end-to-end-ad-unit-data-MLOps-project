@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS campaign_inventory;
+DROP TABLE IF EXISTS briefing;
 CREATE TABLE IF NOT EXISTS campaign_inventory (
     id  SERIAL PRIMARY KEY,
     types TEXT, 
@@ -36,7 +37,8 @@ CREATE TABLE IF NOT EXISTS briefing (
     Percentages TEXT, 
     Flat_Fee TEXT, 
     Net_Cost TEXT);
-INSERT INTO campaign_inventory (
+
+COPY campaign_inventory (
     types, 
     width, 
     height, 
@@ -51,4 +53,6 @@ INSERT INTO campaign_inventory (
     device_type, 
     browser
 )
-VALUES ('test','test','test','test','test','test','test','test','test','test','test','test','test')
+FROM '/usr/local/postgres/data/campaigns_inventory_updated.csv'
+DELIMITER ','
+CSV HEADER;
