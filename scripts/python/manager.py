@@ -1,4 +1,5 @@
 import psycopg2
+import pandas as pd
 
 
 class Manager():
@@ -85,6 +86,40 @@ class Manager():
             except Exception as e:
                 print('command skipped: ', query)
                 print(e)
+
+
+    def fetch_data(self, cursor, table = "total", columns=None, limit=1000000):
+        cols = "*"
+        if (columns is not None):
+            cols = columns
+
+        query = f""" select {cols} from {table} limit {limit}"""
+
+        cursor.execute(query)
+        result = cursor.fetchall()
+
+        return result
+
+    def fetch_data(self, conn, table = "total", columns=None, limit=1000000):
+        """
+        Args:
+            cur: cursor to communicate with database.
+            limit: the number of rows to return
+        Returns:
+            result: iteratable object that holds all values of a query
+        """
+        cols = "*"
+        if (columns is not None):
+            cols = columns
+
+        query = f""" select {cols} from {table} limit {limit}"""
+
+        try:
+            query = 'select * from {table} limit {limit}'
+            results = pd.read_sql_query(query, conn)
+            return results
+        except Exception as e:
+            print(f"error: {e}")
 
 if __name__=="__main__":
     pass

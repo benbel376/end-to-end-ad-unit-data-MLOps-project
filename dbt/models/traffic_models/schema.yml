@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: source_table
+    schema: "staging"
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+    loader: stitch
+    tables:
+      - name: source_campaign
+      - name: source_briefing
+

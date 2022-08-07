@@ -9,6 +9,9 @@ import sys
 import os
 import pandas as pd
 import json
+
+DBT_PROJECT_DIR = "~/dbt_"
+DBT_PROFILE_DIR = "~/dbt_/.dbt"
  
 def set_connection(**config):
     conn = Connection(
@@ -29,9 +32,19 @@ def set_connection(**config):
         schema="staging",
         port=5432
     )
+    conn3 = Connection(
+        conn_id="2warehouse",
+        conn_type="Postgres",
+        host="postgres",
+        login="warehouse",
+        password="warehouse",
+        schema="warehouse",
+        port=5432
+    )
     session = settings.Session()
     session.add(conn)
     session.add(conn2)
+    session.add(conn3)
     session.commit()
     session.close()
 
@@ -53,7 +66,20 @@ with DAG(dag_id="workflow",template_searchpath='includes/sql/',default_args=defa
     run_extraction= PostgresOperator(
                     task_id="run_extraction",
                     postgres_conn_id="3staging",
-                    sql="extract.sql",
+                    sql="extraction.sql",
+                )
+    run_transformation = BashOperator(
+                    task_id="run_transformation",
+                    bash_command=f"cd ~/dbt_ && ~/.local/bin/dbt run --profiles-dir {DBT_PROFILE_DIR}",
+                ),
+    run_tests = BashOperator(
+                    task_id="run_tests",
+                    bash_command=f"cd ~/dbt_ && ~/.local/bin/dbt test --profiles-dir {DBT_PROFILE_DIR}",
+                )
+    run_loading= PostgresOperator(
+                    task_id="run_loading",
+                    postgres_conn_id="2warehouse",
+                    sql="loading.sql",
                 )
 
-task >> run_ingestion >> run_extraction
+task >> run_ingestion >> run_extraction >> run_transformation >> run_tests >> run_loading

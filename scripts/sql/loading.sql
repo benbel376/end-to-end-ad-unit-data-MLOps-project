@@ -1,19 +1,18 @@
 CREATE EXTENSION IF NOT EXISTS dblink;
-DROP TABLE IF EXISTS source_campaign;
-CREATE TABLE source_campaign
+DROP TABLE IF EXISTS source_briefing;
+CREATE TABLE warehouse
 AS
 SELECT *
 FROM dblink('host=postgres
             user=staging
             password=staging
-            dbname=data_lake',
+            dbname=staging',
             'select *
-            from campaign_inventory') 
-            as linktable (id  INT,
+            from trans_join') 
+            as linktable (campaign_id TEXT,
                             types TEXT, 
                             width TEXT, 
-                            height TEXT, 
-                            campaign_id TEXT, 
+                            height TEXT,  
                             creative_id TEXT, 
                             auction_id TEXT,
                             browser_ts TEXT, 
@@ -22,20 +21,7 @@ FROM dblink('host=postgres
                             site_name TEXT, 
                             platform_os TEXT,
                             device_type TEXT, 
-                            browser TEXT);
-
-
-DROP TABLE IF EXISTS source_briefing;
-CREATE TABLE source_briefing
-AS
-SELECT *
-FROM dblink('host=postgres
-            user=staging
-            password=staging
-            dbname=data_lake',
-            'select *
-            from briefing') 
-            as linktable (campaign_id TEXT, 
+                            browser TEXT, 
                             campaign_name TEXT, 
                             Submission_Date TEXT, 
                             Descriptions TEXT,
