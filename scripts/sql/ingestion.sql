@@ -1,5 +1,7 @@
 DROP TABLE IF EXISTS campaign_inventory;
 DROP TABLE IF EXISTS briefing;
+
+CREATE EXTENSION IF NOT EXISTS dblink;
 CREATE TABLE IF NOT EXISTS campaign_inventory (
     id  SERIAL PRIMARY KEY,
     types TEXT, 
@@ -54,5 +56,32 @@ COPY campaign_inventory (
     browser
 )
 FROM '/usr/local/postgres/data/campaigns_inventory_updated.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY briefing (
+    campaign_id, 
+    campaign_name, 
+    Submission_Date, 
+    Descriptions,
+    Campaign_Objectives, 
+    KPIs, 
+    Placement, 
+    StartDate, 
+    EndDate,
+    Serving_Location, 
+    Black_white_audience,
+    Delivery_Requirements, 
+    Cost_Centre,
+    Currency, 
+    Buy_Rate_CPE, 
+    Volume_Agreed, 
+    Gross_Cost_or_Budget,
+    Agency_Fee, 
+    Percentages, 
+    Flat_Fee, 
+    Net_Cost
+)
+FROM '/usr/local/postgres/data/briefing.csv'
 DELIMITER ','
 CSV HEADER;

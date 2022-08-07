@@ -11,13 +11,31 @@ import pandas as pd
 import json
  
 def set_connection(**config):
-    for k,v in config.items():
-        conn = Connection()
-        setattr(conn, k, v)
-        session = settings.Session()
-        session.add(conn)
-        session.commit()
-        session.close()
+    conn = Connection(
+        conn_id="2data_lake",
+        conn_type="Postgres",
+        host="postgres",
+        login="data_lake",
+        password="data_lake",
+        schema="data_lake",
+        port=5432
+    )
+    conn2 = Connection(
+        conn_id="3staging",
+        conn_type="Postgres",
+        host="postgres",
+        login="staging",
+        password="staging",
+        schema="staging",
+        port=5432
+    )
+    session = settings.Session()
+    session.add(conn)
+    session.add(conn2)
+    session.commit()
+    session.close()
+
+
     
 default_args = {"owner":"airflow","start_date":datetime(2021,3,7)}
 with DAG(dag_id="workflow",template_searchpath='includes/sql/',default_args=default_args,schedule_interval='@daily', catchup=False) as dag:
@@ -29,8 +47,13 @@ with DAG(dag_id="workflow",template_searchpath='includes/sql/',default_args=defa
                 ),
     run_ingestion= PostgresOperator(
                     task_id="run_ingestion",
-                    postgres_conn_id="1data_lake",
+                    postgres_conn_id="2data_lake",
                     sql="ingestion.sql",
                 )
+    run_extraction= PostgresOperator(
+                    task_id="run_extraction",
+                    postgres_conn_id="3staging",
+                    sql="extract.sql",
+                )
 
-task >> run_ingestion
+task >> run_ingestion >> run_extraction
