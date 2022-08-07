@@ -88,19 +88,7 @@ class Manager():
                 print(e)
 
 
-    def fetch_data(self, cursor, table = "total", columns=None, limit=1000000):
-        cols = "*"
-        if (columns is not None):
-            cols = columns
-
-        query = f""" select {cols} from {table} limit {limit}"""
-
-        cursor.execute(query)
-        result = cursor.fetchall()
-
-        return result
-
-    def fetch_data(self, conn, table = "total", columns=None, limit=1000000):
+    def fetch_data(self, conn, table = "warehouse", columns=None, limit=1000000):
         """
         Args:
             cur: cursor to communicate with database.
@@ -115,7 +103,6 @@ class Manager():
         query = f""" select {cols} from {table} limit {limit}"""
 
         try:
-            query = 'select * from {table} limit {limit}'
             results = pd.read_sql_query(query, conn)
             return results
         except Exception as e:
