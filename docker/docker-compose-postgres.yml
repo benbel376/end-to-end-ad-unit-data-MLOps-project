@@ -8,10 +8,14 @@ services:
             - "5432:5432"
         volumes: 
             - ../scripts/sql/postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+            - ../data:/usr/local/postgres/data
+            - ../scripts:/usr/local/airflow/includes
             
     pgadmin-compose:
         image: dpage/pgadmin4
-        env_file: ./.env/postgres.env   
+        environment: 
+            PGADMIN_DEFAULT_EMAIL: "test@gmail.com"
+            PGADMIN_DEFAULT_PASSWORD: "test123!"
         ports: 
             - "16543:80"
         depends_on: 

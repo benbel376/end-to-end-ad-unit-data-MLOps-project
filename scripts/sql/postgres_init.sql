@@ -8,7 +8,7 @@ CREATE DATABASE airflow
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1;
 
-CREATE USER data_lake WITH PASSWORD 'data_lake' CREATEDB;
+CREATE ROLE data_lake WITH LOGIN SUPERUSER PASSWORD 'data_lake';
 CREATE DATABASE data_lake
     WITH 
     OWNER = data_lake

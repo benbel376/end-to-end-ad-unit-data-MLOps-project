@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+
+  airflow:
+    build: ./dockerfiles/airflow
+    restart: always
+    env_file: ./.env/airflow.env
+    volumes:
+      - ../airflow/dags:/usr/local/airflow/dags
+      - ../scripts:/usr/local/airflow/includes
+      - ../dbt:/usr/local/airflow/dbt_
+      - ../data:/usr/local/airflow/data
+      - ../airflow/logs:/opt/airflow/logs
+      - ../airflow/plugins:/opt/airflow/plugins
+    ports:
+      - "8087:8080"
+      - "7211:7211"
+      - "9921:9921"
+    command: webserver
+
+networks: 
+  default: 
+    external: 
+      name: local_network_1
