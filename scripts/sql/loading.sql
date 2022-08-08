@@ -1,5 +1,5 @@
 CREATE EXTENSION IF NOT EXISTS dblink;
-DROP TABLE IF EXISTS source_briefing;
+DROP TABLE IF EXISTS warehouse;
 CREATE TABLE warehouse
 AS
 SELECT *
@@ -9,7 +9,9 @@ FROM dblink('host=postgres
             dbname=staging',
             'select *
             from trans_join') 
-            as linktable (campaign_id TEXT,
+            as linktable (
+                            id INT,
+                            campaign_id TEXT,
                             types TEXT, 
                             width TEXT, 
                             height TEXT,  

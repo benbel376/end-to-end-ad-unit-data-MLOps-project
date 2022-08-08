@@ -8,6 +8,7 @@ source_brief as (
 ),
 joins as (
     SELECT 
+    c.id,
     c.campaign_id,
     c.types, 
     c.width, 
