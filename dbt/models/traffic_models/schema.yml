@@ -11,4 +11,5 @@ sources:
     tables:
       - name: source_campaign
       - name: source_briefing
+      - name: source_global_design
 

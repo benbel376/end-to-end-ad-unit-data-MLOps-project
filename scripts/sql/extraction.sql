@@ -9,8 +9,7 @@ FROM dblink('host=postgres
             dbname=data_lake',
             'select *
             from campaign_inventory') 
-            as linktable (id  INT,
-                            types TEXT, 
+            as linktable (types TEXT, 
                             width TEXT, 
                             height TEXT, 
                             campaign_id TEXT, 
@@ -55,3 +54,20 @@ FROM dblink('host=postgres
                             Percentages TEXT, 
                             Flat_Fee TEXT, 
                             Net_Cost TEXT);
+
+DROP TABLE IF EXISTS source_global_design;
+CREATE TABLE source_global_design
+AS
+SELECT *
+FROM dblink('host=postgres
+            user=data_lake
+            password=data_lake
+            dbname=data_lake',
+            'select *
+            from global_design') 
+            as linktable (game_key TEXT, 
+                            design_feature TEXT, 
+                            feature_type TEXT, 
+                            feature_variety TEXT,
+                            sub_feature TEXT, 
+                            feature_value TEXT);

@@ -10,7 +10,6 @@ FROM dblink('host=postgres
             'select *
             from trans_join') 
             as linktable (
-                            id INT,
                             campaign_id TEXT,
                             types TEXT, 
                             width TEXT, 
@@ -43,4 +42,9 @@ FROM dblink('host=postgres
                             Agency_Fee TEXT, 
                             Percentages TEXT, 
                             Flat_Fee TEXT, 
-                            Net_Cost TEXT);
+                            Net_Cost TEXT, 
+                            design_feature TEXT, 
+                            feature_type TEXT, 
+                            feature_variety TEXT,
+                            sub_feature TEXT, 
+                            feature_value TEXT);

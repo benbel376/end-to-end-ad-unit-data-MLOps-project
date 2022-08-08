@@ -1,9 +1,7 @@
-DROP TABLE IF EXISTS campaign_inventory;
-DROP TABLE IF EXISTS briefing;
-
 CREATE EXTENSION IF NOT EXISTS dblink;
+
+DROP TABLE IF EXISTS campaign_inventory;
 CREATE TABLE IF NOT EXISTS campaign_inventory (
-    id  SERIAL PRIMARY KEY,
     types TEXT, 
     width TEXT, 
     height TEXT, 
@@ -17,6 +15,8 @@ CREATE TABLE IF NOT EXISTS campaign_inventory (
     platform_os TEXT,
     device_type TEXT, 
     browser TEXT);
+
+DROP TABLE IF EXISTS briefing;
 CREATE TABLE IF NOT EXISTS briefing (
     campaign_id TEXT, 
     campaign_name TEXT, 
@@ -39,6 +39,15 @@ CREATE TABLE IF NOT EXISTS briefing (
     Percentages TEXT, 
     Flat_Fee TEXT, 
     Net_Cost TEXT);
+
+DROP TABLE IF EXISTS global_design;
+CREATE TABLE IF NOT EXISTS global_design (
+    game_key TEXT, 
+    design_feature TEXT, 
+    feature_type TEXT, 
+    feature_variety TEXT,
+    sub_feature TEXT, 
+    feature_value TEXT);
 
 COPY campaign_inventory (
     types, 
@@ -83,5 +92,18 @@ COPY briefing (
     Net_Cost
 )
 FROM '/usr/local/postgres/data/briefing.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+COPY global_design (
+    game_key, 
+    design_feature, 
+    feature_type, 
+    feature_variety,
+    sub_feature, 
+    feature_value
+)
+FROM '/usr/local/postgres/data/global_design_data.csv'
 DELIMITER ','
 CSV HEADER;

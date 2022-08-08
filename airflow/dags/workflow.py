@@ -10,8 +10,24 @@ import os
 import pandas as pd
 import json
 
+print(os.path.abspath("working.............................."))
+sys.path.append(os.path.abspath("includes/python"))
+
+from ingest_global import Ingest
+
+ingest_jsons = Ingest()
+
 DBT_PROJECT_DIR = "~/dbt_"
 DBT_PROFILE_DIR = "~/dbt_/.dbt"
+
+def json_extract(**context):
+    
+    json_data =ingest_jsons.load_json("data/global_design_data.json")
+    flattened_json = ingest_jsons.flatten_json(json_data)
+    final_data = ingest_jsons.restructure(flattened_json)
+    path = "data/global_design_data.csv"
+    final_data.to_csv(path, index=False)
+    print("successful")
  
 def set_connection(**config):
     conn = Connection(
@@ -57,7 +73,12 @@ with DAG(dag_id="workflow",template_searchpath='includes/sql/',default_args=defa
                     dag = dag,
                     task_id = 'set-connections',
                     python_callable = set_connection
-                ),
+                )
+    run_json_extract= PythonOperator(
+                    task_id = "run_json_extract",
+                    python_callable = json_extract,
+                    provide_context=True
+                )
     run_ingestion= PostgresOperator(
                     task_id="run_ingestion",
                     postgres_conn_id="2data_lake",
@@ -67,6 +88,11 @@ with DAG(dag_id="workflow",template_searchpath='includes/sql/',default_args=defa
                     task_id="run_extraction",
                     postgres_conn_id="3staging",
                     sql="extraction.sql",
+                )
+    run_preprocessing= PostgresOperator(
+                    task_id="run_preprocessing",
+                    postgres_conn_id="3staging",
+                    sql="clean_data.sql",
                 )
     run_transformation = BashOperator(
                     task_id="run_transformation",
@@ -82,4 +108,4 @@ with DAG(dag_id="workflow",template_searchpath='includes/sql/',default_args=defa
                     sql="loading.sql",
                 )
 
-task >> run_ingestion >> run_extraction >> run_transformation >> run_tests >> run_loading
+task >> run_json_extract >> run_ingestion >> run_extraction >> run_preprocessing >> run_transformation >> run_tests >> run_loading
