@@ -31730,3 +31730,733 @@ There are 1 unused configuration paths:
 2022-08-08 23:59:52.776381 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd4a1acde90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd4a1acdf90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd4a1854050>]}
 2022-08-08 23:59:52.777303 (MainThread): Flushing usage events
 2022-08-08 23:59:54.112022 (MainThread): Connection 'model.dbt_.trans_join' was properly closed.
+2022-08-09 00:03:24.258421 (MainThread): Running with dbt=0.16.1
+2022-08-09 00:03:25.068610 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, exclude=None, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/usr/local/airflow/dbt_/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', single_threaded=False, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2022-08-09 00:03:25.075126 (MainThread): Tracking: tracking
+2022-08-09 00:03:25.251806 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f027194e610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0271af7d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0271a4acd0>]}
+2022-08-09 00:03:25.525660 (MainThread): Partial parsing not enabled
+2022-08-09 00:03:25.589888 (MainThread): Parsing macros/core.sql
+2022-08-09 00:03:25.701083 (MainThread): Parsing macros/materializations/helpers.sql
+2022-08-09 00:03:25.820021 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2022-08-09 00:03:25.869843 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2022-08-09 00:03:26.193324 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2022-08-09 00:03:26.472360 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2022-08-09 00:03:26.575305 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2022-08-09 00:03:26.609843 (MainThread): Parsing macros/materializations/seed/seed.sql
+2022-08-09 00:03:26.921422 (MainThread): Parsing macros/materializations/common/merge.sql
+2022-08-09 00:03:27.023377 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2022-08-09 00:03:27.127831 (MainThread): Parsing macros/materializations/view/view.sql
+2022-08-09 00:03:27.240339 (MainThread): Parsing macros/materializations/table/table.sql
+2022-08-09 00:03:27.357246 (MainThread): Parsing macros/adapters/common.sql
+2022-08-09 00:03:27.780364 (MainThread): Parsing macros/etc/get_custom_database.sql
+2022-08-09 00:03:27.799330 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2022-08-09 00:03:27.819140 (MainThread): Parsing macros/etc/get_relation_comment.sql
+2022-08-09 00:03:27.862294 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2022-08-09 00:03:27.884899 (MainThread): Parsing macros/etc/is_incremental.sql
+2022-08-09 00:03:27.915864 (MainThread): Parsing macros/etc/query.sql
+2022-08-09 00:03:27.928368 (MainThread): Parsing macros/etc/datetime.sql
+2022-08-09 00:03:28.015577 (MainThread): Parsing macros/schema_tests/not_null.sql
+2022-08-09 00:03:28.041757 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2022-08-09 00:03:28.077569 (MainThread): Parsing macros/schema_tests/unique.sql
+2022-08-09 00:03:28.104752 (MainThread): Parsing macros/schema_tests/relationships.sql
+2022-08-09 00:03:28.161705 (MainThread): Parsing macros/relations.sql
+2022-08-09 00:03:28.193084 (MainThread): Parsing macros/adapters.sql
+2022-08-09 00:03:28.342709 (MainThread): Parsing macros/catalog.sql
+2022-08-09 00:03:28.375443 (MainThread): Parsing macros/materializations/snapshot_merge.sql
+2022-08-09 00:03:28.898340 (MainThread): Partial parsing not enabled
+2022-08-09 00:03:29.598253 (MainThread): Acquiring new postgres connection "model.dbt_.trans_join".
+2022-08-09 00:03:29.612736 (MainThread): Opening a new connection, currently in state init
+2022-08-09 00:03:32.281544 (MainThread): WARNING: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_.example
+
+2022-08-09 00:03:35.015880 (MainThread): scipy not found, skipping conversion test.
+2022-08-09 00:03:35.027147 (MainThread): write_gpickle is deprecated and will be removed in 3.0.Use ``pickle.dump(G, path, protocol)``
+2022-08-09 00:03:35.028613 (MainThread): Found 1 model, 0 tests, 0 snapshots, 0 analyses, 127 macros, 0 operations, 0 seed files, 3 sources
+2022-08-09 00:03:35.044786 (MainThread): 
+2022-08-09 00:03:35.046480 (MainThread): Acquiring new postgres connection "master".
+2022-08-09 00:03:35.046960 (MainThread): Opening a new connection, currently in state init
+2022-08-09 00:03:35.121404 (ThreadPoolExecutor-0_0): Acquiring new postgres connection "list_staging".
+2022-08-09 00:03:35.121859 (ThreadPoolExecutor-0_0): Opening a new connection, currently in state init
+2022-08-09 00:03:35.590385 (ThreadPoolExecutor-0_0): Using postgres connection "list_staging".
+2022-08-09 00:03:35.591112 (ThreadPoolExecutor-0_0): On list_staging: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "connection_name": "list_staging"} */
+
+    select distinct nspname from pg_namespace
+  
+2022-08-09 00:03:35.616584 (ThreadPoolExecutor-0_0): SQL status: SELECT 5 in 0.02 seconds
+2022-08-09 00:03:35.858505 (ThreadPoolExecutor-1_0): Acquiring new postgres connection "list_staging_staging".
+2022-08-09 00:03:35.859785 (ThreadPoolExecutor-1_0): Re-using an available connection from the pool (formerly list_staging).
+2022-08-09 00:03:35.869746 (ThreadPoolExecutor-1_0): Using postgres connection "list_staging_staging".
+2022-08-09 00:03:35.870396 (ThreadPoolExecutor-1_0): On list_staging_staging: BEGIN
+2022-08-09 00:03:35.872684 (ThreadPoolExecutor-1_0): SQL status: BEGIN in 0.00 seconds
+2022-08-09 00:03:35.873525 (ThreadPoolExecutor-1_0): Using postgres connection "list_staging_staging".
+2022-08-09 00:03:35.874029 (ThreadPoolExecutor-1_0): On list_staging_staging: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "connection_name": "list_staging_staging"} */
+select
+      'staging' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'staging'
+    union all
+    select
+      'staging' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'staging'
+  
+2022-08-09 00:03:35.891106 (ThreadPoolExecutor-1_0): SQL status: SELECT 4 in 0.02 seconds
+2022-08-09 00:03:35.926908 (ThreadPoolExecutor-1_0): On list_staging_staging: ROLLBACK
+2022-08-09 00:03:36.008837 (MainThread): Using postgres connection "master".
+2022-08-09 00:03:36.010041 (MainThread): On master: BEGIN
+2022-08-09 00:03:36.026912 (MainThread): SQL status: BEGIN in 0.02 seconds
+2022-08-09 00:03:36.027633 (MainThread): Using postgres connection "master".
+2022-08-09 00:03:36.028111 (MainThread): On master: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2022-08-09 00:03:36.061547 (MainThread): SQL status: SELECT 0 in 0.03 seconds
+2022-08-09 00:03:36.064745 (MainThread): On master: ROLLBACK
+2022-08-09 00:03:36.071287 (MainThread): Using postgres connection "master".
+2022-08-09 00:03:36.071845 (MainThread): On master: BEGIN
+2022-08-09 00:03:36.073088 (MainThread): SQL status: BEGIN in 0.00 seconds
+2022-08-09 00:03:36.073572 (MainThread): On master: COMMIT
+2022-08-09 00:03:36.073878 (MainThread): Using postgres connection "master".
+2022-08-09 00:03:36.074139 (MainThread): On master: COMMIT
+2022-08-09 00:03:36.074841 (MainThread): SQL status: COMMIT in 0.00 seconds
+2022-08-09 00:03:36.079199 (MainThread): 00:03:36 | Concurrency: 1 threads (target='dev')
+2022-08-09 00:03:36.079758 (MainThread): 00:03:36 | 
+2022-08-09 00:03:36.144116 (Thread-1): Began running node model.dbt_.trans_join
+2022-08-09 00:03:36.144759 (Thread-1): 00:03:36 | 1 of 1 START table model staging.trans_join.......................... [RUN]
+2022-08-09 00:03:36.145717 (Thread-1): Acquiring new postgres connection "model.dbt_.trans_join".
+2022-08-09 00:03:36.146074 (Thread-1): Re-using an available connection from the pool (formerly list_staging_staging).
+2022-08-09 00:03:36.146387 (Thread-1): Compiling model.dbt_.trans_join
+2022-08-09 00:03:36.315905 (Thread-1): Writing injected SQL for node "model.dbt_.trans_join"
+2022-08-09 00:03:36.317608 (Thread-1): finished collecting timing info
+2022-08-09 00:03:36.439361 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:03:36.439856 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+drop table if exists "staging"."staging"."trans_join__dbt_tmp" cascade
+2022-08-09 00:03:36.441154 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2022-08-09 00:03:36.463903 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:03:36.464379 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+drop table if exists "staging"."staging"."trans_join__dbt_backup" cascade
+2022-08-09 00:03:36.465492 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2022-08-09 00:03:36.603456 (Thread-1): Writing runtime SQL for node "model.dbt_.trans_join"
+2022-08-09 00:03:36.604723 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:03:36.605262 (Thread-1): On model.dbt_.trans_join: BEGIN
+2022-08-09 00:03:36.606457 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2022-08-09 00:03:36.606956 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:03:36.607239 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+
+
+  create  table "staging"."staging"."trans_join__dbt_tmp"
+  as (
+    
+
+with source_camp as (
+    select * from staging.staging.source_campaign
+),
+source_brief as (
+    select * from staging.staging.source_briefing
+),
+source_global as (
+    select * from staging.staging.source_global_design
+),
+joins as (
+    SELECT 
+    c.campaign_id,
+    c.types, 
+    c.width, 
+    c.height,  
+    c.creative_id, 
+    c.auction_id,
+    c.browser_ts, 
+    c.game_key,
+    c.geo_country, 
+    c.site_name, 
+    c.platform_os,
+    c.device_type, 
+    c.browser,
+    b.campaign_name, 
+    b.Submission_Date, 
+    b.Descriptions,
+    b.Campaign_Objectives, 
+    b.KPIs, 
+    b.Placement, 
+    b.StartDate, 
+    b.EndDate,
+    b.Serving_Location, 
+    b.Black_white_audience, 
+    b.Cost_Centre,
+    b.Currency, 
+    b.Buy_Rate_CPE, 
+    b.Volume_Agreed, 
+    b.Gross_Cost_or_Budget,
+    b.Agency_Fee, 
+    b.Percentages, 
+    b.Net_Cost
+    FROM source_camp as c
+    INNER JOIN source_brief as b ON c.campaign_id = b.campaign_id
+),
+
+joins2 as (
+    SELECT 
+    j.campaign_id,
+    j.types, 
+    j.width, 
+    j.height,  
+    j.creative_id, 
+    j.auction_id,
+    j.browser_ts, 
+    j.game_key,
+    j.geo_country, 
+    j.site_name, 
+    j.platform_os,
+    j.device_type, 
+    j.browser,
+    j.campaign_name, 
+    j.Submission_Date, 
+    j.Descriptions,
+    j.Campaign_Objectives, 
+    j.KPIs, 
+    j.Placement, 
+    j.StartDate, 
+    j.EndDate,
+    j.Serving_Location, 
+    j.Black_white_audience,
+    j.Cost_Centre,
+    j.Currency, 
+    j.Buy_Rate_CPE, 
+    j.Volume_Agreed, 
+    j.Gross_Cost_or_Budget,
+    j.Agency_Fee, 
+    j.Percentages, 
+    j.Net_Cost,
+    g.design_feature, 
+    g.feature_type, 
+    g.feature_variety,
+    g.sub_feature, 
+    g.feature_value
+    FROM joins as j
+    INNER JOIN source_global as g ON g.game_key = j.game_key
+),
+
+final as (
+    select * from joins2
+)
+
+select * from final
+  );
+2022-08-09 00:03:41.401895 (Thread-1): SQL status: SELECT 5594 in 4.79 seconds
+2022-08-09 00:03:41.470073 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:03:41.470540 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+alter table "staging"."staging"."trans_join" rename to "trans_join__dbt_backup"
+2022-08-09 00:03:41.475408 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2022-08-09 00:03:41.496058 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:03:41.496516 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+alter table "staging"."staging"."trans_join__dbt_tmp" rename to "trans_join"
+2022-08-09 00:03:41.498989 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2022-08-09 00:03:41.505690 (Thread-1): On model.dbt_.trans_join: COMMIT
+2022-08-09 00:03:41.506149 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:03:41.506433 (Thread-1): On model.dbt_.trans_join: COMMIT
+2022-08-09 00:03:41.559460 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2022-08-09 00:03:41.580357 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:03:41.580857 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+drop table if exists "staging"."staging"."trans_join__dbt_backup" cascade
+2022-08-09 00:03:41.594357 (Thread-1): SQL status: DROP TABLE in 0.01 seconds
+2022-08-09 00:03:41.613013 (Thread-1): finished collecting timing info
+2022-08-09 00:03:41.618839 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96af12ef-ffe3-46b8-aa4c-e8bd3ecfffda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f026f1d3cd0>]}
+2022-08-09 00:03:41.623282 (Thread-1): 00:03:41 | 1 of 1 OK created table model staging.trans_join..................... [SELECT 5594 in 5.47s]
+2022-08-09 00:03:41.624433 (Thread-1): Finished running node model.dbt_.trans_join
+2022-08-09 00:03:41.659494 (MainThread): Using postgres connection "master".
+2022-08-09 00:03:41.659949 (MainThread): On master: BEGIN
+2022-08-09 00:03:41.660739 (MainThread): SQL status: BEGIN in 0.00 seconds
+2022-08-09 00:03:41.661185 (MainThread): On master: COMMIT
+2022-08-09 00:03:41.661466 (MainThread): Using postgres connection "master".
+2022-08-09 00:03:41.661721 (MainThread): On master: COMMIT
+2022-08-09 00:03:41.667393 (MainThread): SQL status: COMMIT in 0.01 seconds
+2022-08-09 00:03:41.668532 (MainThread): 00:03:41 | 
+2022-08-09 00:03:41.669006 (MainThread): 00:03:41 | Finished running 1 table model in 6.62s.
+2022-08-09 00:03:41.669345 (MainThread): Connection 'master' was left open.
+2022-08-09 00:03:41.678791 (MainThread): On master: Close
+2022-08-09 00:03:41.689422 (MainThread): Connection 'model.dbt_.trans_join' was left open.
+2022-08-09 00:03:41.689928 (MainThread): On model.dbt_.trans_join: Close
+2022-08-09 00:03:41.737880 (MainThread): 
+2022-08-09 00:03:41.739442 (MainThread): Completed successfully
+2022-08-09 00:03:41.740551 (MainThread): 
+Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+2022-08-09 00:03:41.743806 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02655a36d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0260758890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f027194e610>]}
+2022-08-09 00:03:41.744642 (MainThread): Flushing usage events
+2022-08-09 00:04:00.115158 (MainThread): Running with dbt=0.16.1
+2022-08-09 00:04:00.393104 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.test.TestTask'>, data=False, debug=False, exclude=None, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/usr/local/airflow/dbt_/.dbt', project_dir=None, record_timing_info=None, rpc_method='test', schema=False, single_threaded=False, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, vars='{}', version_check=True, warn_error=False, which='test', write_json=True)
+2022-08-09 00:04:00.394169 (MainThread): Tracking: tracking
+2022-08-09 00:04:00.415846 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faca3ecf650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faca78f8a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faca3ecfbd0>]}
+2022-08-09 00:04:00.522262 (MainThread): Partial parsing not enabled
+2022-08-09 00:04:00.528620 (MainThread): Parsing macros/core.sql
+2022-08-09 00:04:00.550002 (MainThread): Parsing macros/materializations/helpers.sql
+2022-08-09 00:04:00.585236 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2022-08-09 00:04:00.593580 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2022-08-09 00:04:00.727751 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2022-08-09 00:04:00.810101 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2022-08-09 00:04:00.838532 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2022-08-09 00:04:00.847484 (MainThread): Parsing macros/materializations/seed/seed.sql
+2022-08-09 00:04:00.945539 (MainThread): Parsing macros/materializations/common/merge.sql
+2022-08-09 00:04:01.022006 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2022-08-09 00:04:01.052001 (MainThread): Parsing macros/materializations/view/view.sql
+2022-08-09 00:04:01.083776 (MainThread): Parsing macros/materializations/table/table.sql
+2022-08-09 00:04:01.116004 (MainThread): Parsing macros/adapters/common.sql
+2022-08-09 00:04:01.296537 (MainThread): Parsing macros/etc/get_custom_database.sql
+2022-08-09 00:04:01.301313 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2022-08-09 00:04:01.310631 (MainThread): Parsing macros/etc/get_relation_comment.sql
+2022-08-09 00:04:01.320706 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2022-08-09 00:04:01.325338 (MainThread): Parsing macros/etc/is_incremental.sql
+2022-08-09 00:04:01.333024 (MainThread): Parsing macros/etc/query.sql
+2022-08-09 00:04:01.338155 (MainThread): Parsing macros/etc/datetime.sql
+2022-08-09 00:04:01.378394 (MainThread): Parsing macros/schema_tests/not_null.sql
+2022-08-09 00:04:01.382782 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2022-08-09 00:04:01.392111 (MainThread): Parsing macros/schema_tests/unique.sql
+2022-08-09 00:04:01.397215 (MainThread): Parsing macros/schema_tests/relationships.sql
+2022-08-09 00:04:01.403340 (MainThread): Parsing macros/relations.sql
+2022-08-09 00:04:01.410244 (MainThread): Parsing macros/adapters.sql
+2022-08-09 00:04:01.482561 (MainThread): Parsing macros/catalog.sql
+2022-08-09 00:04:01.493020 (MainThread): Parsing macros/materializations/snapshot_merge.sql
+2022-08-09 00:04:01.578828 (MainThread): Partial parsing not enabled
+2022-08-09 00:04:01.714080 (MainThread): Acquiring new postgres connection "model.dbt_.trans_join".
+2022-08-09 00:04:01.714511 (MainThread): Opening a new connection, currently in state init
+2022-08-09 00:04:02.416799 (MainThread): WARNING: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_.example
+
+2022-08-09 00:04:03.431388 (MainThread): scipy not found, skipping conversion test.
+2022-08-09 00:04:03.444593 (MainThread): write_gpickle is deprecated and will be removed in 3.0.Use ``pickle.dump(G, path, protocol)``
+2022-08-09 00:04:03.445892 (MainThread): Found 1 model, 0 tests, 0 snapshots, 0 analyses, 127 macros, 0 operations, 0 seed files, 3 sources
+2022-08-09 00:04:03.457835 (MainThread): WARNING: Nothing to do. Try checking your model configs and model specification args
+2022-08-09 00:04:03.459277 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fac937cef50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fac937c4e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fac9354b050>]}
+2022-08-09 00:04:03.460143 (MainThread): Flushing usage events
+2022-08-09 00:04:04.753309 (MainThread): Connection 'model.dbt_.trans_join' was properly closed.
+2022-08-09 00:14:59.819871 (MainThread): Running with dbt=0.16.1
+2022-08-09 00:15:00.411076 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, exclude=None, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/usr/local/airflow/dbt_/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', single_threaded=False, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2022-08-09 00:15:00.412050 (MainThread): Tracking: tracking
+2022-08-09 00:15:00.458829 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb3aa05e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb3abbb8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb3aa0b990>]}
+2022-08-09 00:15:00.639623 (MainThread): Partial parsing not enabled
+2022-08-09 00:15:00.654592 (MainThread): Parsing macros/core.sql
+2022-08-09 00:15:00.694133 (MainThread): Parsing macros/materializations/helpers.sql
+2022-08-09 00:15:00.824581 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2022-08-09 00:15:00.873394 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2022-08-09 00:15:01.208816 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2022-08-09 00:15:01.335834 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2022-08-09 00:15:01.376388 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2022-08-09 00:15:01.388478 (MainThread): Parsing macros/materializations/seed/seed.sql
+2022-08-09 00:15:01.556110 (MainThread): Parsing macros/materializations/common/merge.sql
+2022-08-09 00:15:01.658834 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2022-08-09 00:15:01.700184 (MainThread): Parsing macros/materializations/view/view.sql
+2022-08-09 00:15:01.758293 (MainThread): Parsing macros/materializations/table/table.sql
+2022-08-09 00:15:01.806510 (MainThread): Parsing macros/adapters/common.sql
+2022-08-09 00:15:02.028291 (MainThread): Parsing macros/etc/get_custom_database.sql
+2022-08-09 00:15:02.034512 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2022-08-09 00:15:02.045848 (MainThread): Parsing macros/etc/get_relation_comment.sql
+2022-08-09 00:15:02.057551 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2022-08-09 00:15:02.063557 (MainThread): Parsing macros/etc/is_incremental.sql
+2022-08-09 00:15:02.072563 (MainThread): Parsing macros/etc/query.sql
+2022-08-09 00:15:02.079550 (MainThread): Parsing macros/etc/datetime.sql
+2022-08-09 00:15:02.127503 (MainThread): Parsing macros/schema_tests/not_null.sql
+2022-08-09 00:15:02.133977 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2022-08-09 00:15:02.144437 (MainThread): Parsing macros/schema_tests/unique.sql
+2022-08-09 00:15:02.151178 (MainThread): Parsing macros/schema_tests/relationships.sql
+2022-08-09 00:15:02.158522 (MainThread): Parsing macros/relations.sql
+2022-08-09 00:15:02.166746 (MainThread): Parsing macros/adapters.sql
+2022-08-09 00:15:02.249052 (MainThread): Parsing macros/catalog.sql
+2022-08-09 00:15:02.261614 (MainThread): Parsing macros/materializations/snapshot_merge.sql
+2022-08-09 00:15:02.446210 (MainThread): Partial parsing not enabled
+2022-08-09 00:15:02.782443 (MainThread): Acquiring new postgres connection "model.dbt_.trans_join".
+2022-08-09 00:15:02.788273 (MainThread): Opening a new connection, currently in state init
+2022-08-09 00:15:04.067886 (MainThread): WARNING: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_.example
+
+2022-08-09 00:15:06.012501 (MainThread): scipy not found, skipping conversion test.
+2022-08-09 00:15:06.035408 (MainThread): write_gpickle is deprecated and will be removed in 3.0.Use ``pickle.dump(G, path, protocol)``
+2022-08-09 00:15:06.036596 (MainThread): Found 1 model, 0 tests, 0 snapshots, 0 analyses, 127 macros, 0 operations, 0 seed files, 3 sources
+2022-08-09 00:15:06.058384 (MainThread): 
+2022-08-09 00:15:06.059598 (MainThread): Acquiring new postgres connection "master".
+2022-08-09 00:15:06.059995 (MainThread): Opening a new connection, currently in state init
+2022-08-09 00:15:06.117162 (ThreadPoolExecutor-0_0): Acquiring new postgres connection "list_staging".
+2022-08-09 00:15:06.117881 (ThreadPoolExecutor-0_0): Opening a new connection, currently in state init
+2022-08-09 00:15:06.983287 (ThreadPoolExecutor-0_0): Using postgres connection "list_staging".
+2022-08-09 00:15:06.983774 (ThreadPoolExecutor-0_0): On list_staging: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "connection_name": "list_staging"} */
+
+    select distinct nspname from pg_namespace
+  
+2022-08-09 00:15:07.010626 (ThreadPoolExecutor-0_0): SQL status: SELECT 5 in 0.03 seconds
+2022-08-09 00:15:07.135241 (ThreadPoolExecutor-1_0): Acquiring new postgres connection "list_staging_staging".
+2022-08-09 00:15:07.135911 (ThreadPoolExecutor-1_0): Re-using an available connection from the pool (formerly list_staging).
+2022-08-09 00:15:07.141760 (ThreadPoolExecutor-1_0): Using postgres connection "list_staging_staging".
+2022-08-09 00:15:07.142233 (ThreadPoolExecutor-1_0): On list_staging_staging: BEGIN
+2022-08-09 00:15:07.144091 (ThreadPoolExecutor-1_0): SQL status: BEGIN in 0.00 seconds
+2022-08-09 00:15:07.144582 (ThreadPoolExecutor-1_0): Using postgres connection "list_staging_staging".
+2022-08-09 00:15:07.144867 (ThreadPoolExecutor-1_0): On list_staging_staging: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "connection_name": "list_staging_staging"} */
+select
+      'staging' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'staging'
+    union all
+    select
+      'staging' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'staging'
+  
+2022-08-09 00:15:07.152886 (ThreadPoolExecutor-1_0): SQL status: SELECT 4 in 0.01 seconds
+2022-08-09 00:15:07.168424 (ThreadPoolExecutor-1_0): On list_staging_staging: ROLLBACK
+2022-08-09 00:15:07.204562 (MainThread): Using postgres connection "master".
+2022-08-09 00:15:07.205025 (MainThread): On master: BEGIN
+2022-08-09 00:15:07.218345 (MainThread): SQL status: BEGIN in 0.01 seconds
+2022-08-09 00:15:07.218935 (MainThread): Using postgres connection "master".
+2022-08-09 00:15:07.219276 (MainThread): On master: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2022-08-09 00:15:07.242200 (MainThread): SQL status: SELECT 0 in 0.02 seconds
+2022-08-09 00:15:07.245217 (MainThread): On master: ROLLBACK
+2022-08-09 00:15:07.246338 (MainThread): Using postgres connection "master".
+2022-08-09 00:15:07.246803 (MainThread): On master: BEGIN
+2022-08-09 00:15:07.248705 (MainThread): SQL status: BEGIN in 0.00 seconds
+2022-08-09 00:15:07.249310 (MainThread): On master: COMMIT
+2022-08-09 00:15:07.249648 (MainThread): Using postgres connection "master".
+2022-08-09 00:15:07.249920 (MainThread): On master: COMMIT
+2022-08-09 00:15:07.250629 (MainThread): SQL status: COMMIT in 0.00 seconds
+2022-08-09 00:15:07.251701 (MainThread): 00:15:07 | Concurrency: 1 threads (target='dev')
+2022-08-09 00:15:07.252189 (MainThread): 00:15:07 | 
+2022-08-09 00:15:07.279143 (Thread-1): Began running node model.dbt_.trans_join
+2022-08-09 00:15:07.279837 (Thread-1): 00:15:07 | 1 of 1 START table model staging.trans_join.......................... [RUN]
+2022-08-09 00:15:07.280812 (Thread-1): Acquiring new postgres connection "model.dbt_.trans_join".
+2022-08-09 00:15:07.281172 (Thread-1): Re-using an available connection from the pool (formerly list_staging_staging).
+2022-08-09 00:15:07.281575 (Thread-1): Compiling model.dbt_.trans_join
+2022-08-09 00:15:07.404537 (Thread-1): Writing injected SQL for node "model.dbt_.trans_join"
+2022-08-09 00:15:07.405627 (Thread-1): finished collecting timing info
+2022-08-09 00:15:07.559263 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:15:07.559781 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+drop table if exists "staging"."staging"."trans_join__dbt_tmp" cascade
+2022-08-09 00:15:07.561140 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2022-08-09 00:15:07.575741 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:15:07.576198 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+drop table if exists "staging"."staging"."trans_join__dbt_backup" cascade
+2022-08-09 00:15:07.577210 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2022-08-09 00:15:07.718687 (Thread-1): Writing runtime SQL for node "model.dbt_.trans_join"
+2022-08-09 00:15:07.720072 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:15:07.720491 (Thread-1): On model.dbt_.trans_join: BEGIN
+2022-08-09 00:15:07.725598 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2022-08-09 00:15:07.726078 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:15:07.726358 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+
+
+  create  table "staging"."staging"."trans_join__dbt_tmp"
+  as (
+    
+
+with source_camp as (
+    select * from staging.staging.source_campaign
+),
+source_brief as (
+    select * from staging.staging.source_briefing
+),
+source_global as (
+    select * from staging.staging.source_global_design
+),
+joins as (
+    SELECT 
+    c.campaign_id,
+    c.types, 
+    c.width, 
+    c.height,  
+    c.creative_id, 
+    c.auction_id,
+    c.browser_ts, 
+    c.game_key,
+    c.geo_country, 
+    c.site_name, 
+    c.platform_os,
+    c.device_type, 
+    c.browser,
+    b.campaign_name, 
+    b.Submission_Date, 
+    b.Descriptions,
+    b.Campaign_Objectives, 
+    b.KPIs, 
+    b.Placement, 
+    b.StartDate, 
+    b.EndDate,
+    b.Serving_Location, 
+    b.Black_white_audience, 
+    b.Cost_Centre,
+    b.Currency, 
+    b.Buy_Rate_CPE, 
+    b.Volume_Agreed, 
+    b.Gross_Cost_or_Budget,
+    b.Agency_Fee, 
+    b.Percentages, 
+    b.Net_Cost
+    FROM source_camp as c
+    INNER JOIN source_brief as b ON c.campaign_id = b.campaign_id
+),
+
+joins2 as (
+    SELECT 
+    j.campaign_id,
+    j.types, 
+    j.width, 
+    j.height,  
+    j.creative_id, 
+    j.auction_id,
+    j.browser_ts, 
+    j.game_key,
+    j.geo_country, 
+    j.site_name, 
+    j.platform_os,
+    j.device_type, 
+    j.browser,
+    j.campaign_name, 
+    j.Submission_Date, 
+    j.Descriptions,
+    j.Campaign_Objectives, 
+    j.KPIs, 
+    j.Placement, 
+    j.StartDate, 
+    j.EndDate,
+    j.Serving_Location, 
+    j.Black_white_audience,
+    j.Cost_Centre,
+    j.Currency, 
+    j.Buy_Rate_CPE, 
+    j.Volume_Agreed, 
+    j.Gross_Cost_or_Budget,
+    j.Agency_Fee, 
+    j.Percentages, 
+    j.Net_Cost,
+    g.design_feature, 
+    g.feature_type, 
+    g.feature_variety,
+    g.sub_feature, 
+    g.feature_value
+    FROM joins as j
+    LEFT JOIN source_global as g ON g.game_key = j.game_key
+),
+
+final as (
+    select * from joins2
+)
+
+select * from final
+  );
+2022-08-09 00:15:50.685782 (Thread-1): SQL status: SELECT 360663 in 42.96 seconds
+2022-08-09 00:15:50.728853 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:15:50.731224 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+alter table "staging"."staging"."trans_join" rename to "trans_join__dbt_backup"
+2022-08-09 00:15:50.733069 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2022-08-09 00:15:50.759319 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:15:50.759916 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+alter table "staging"."staging"."trans_join__dbt_tmp" rename to "trans_join"
+2022-08-09 00:15:50.761257 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2022-08-09 00:15:50.769477 (Thread-1): On model.dbt_.trans_join: COMMIT
+2022-08-09 00:15:50.769940 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:15:50.770273 (Thread-1): On model.dbt_.trans_join: COMMIT
+2022-08-09 00:15:50.940586 (Thread-1): SQL status: COMMIT in 0.17 seconds
+2022-08-09 00:15:50.964542 (Thread-1): Using postgres connection "model.dbt_.trans_join".
+2022-08-09 00:15:50.965200 (Thread-1): On model.dbt_.trans_join: /* {"app": "dbt", "dbt_version": "0.16.1", "profile_name": "transformer", "target_name": "dev", "node_id": "model.dbt_.trans_join"} */
+drop table if exists "staging"."staging"."trans_join__dbt_backup" cascade
+2022-08-09 00:15:51.014934 (Thread-1): SQL status: DROP TABLE in 0.05 seconds
+2022-08-09 00:15:51.053306 (Thread-1): finished collecting timing info
+2022-08-09 00:15:51.057303 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3310d255-5a0d-4866-94e1-215d61787236', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb3aae4fd0>]}
+2022-08-09 00:15:51.058235 (Thread-1): 00:15:51 | 1 of 1 OK created table model staging.trans_join..................... [SELECT 360663 in 43.78s]
+2022-08-09 00:15:51.068737 (Thread-1): Finished running node model.dbt_.trans_join
+2022-08-09 00:15:51.169681 (MainThread): Using postgres connection "master".
+2022-08-09 00:15:51.170151 (MainThread): On master: BEGIN
+2022-08-09 00:15:51.171007 (MainThread): SQL status: BEGIN in 0.00 seconds
+2022-08-09 00:15:51.171472 (MainThread): On master: COMMIT
+2022-08-09 00:15:51.171760 (MainThread): Using postgres connection "master".
+2022-08-09 00:15:51.172026 (MainThread): On master: COMMIT
+2022-08-09 00:15:51.172858 (MainThread): SQL status: COMMIT in 0.00 seconds
+2022-08-09 00:15:51.173925 (MainThread): 00:15:51 | 
+2022-08-09 00:15:51.174401 (MainThread): 00:15:51 | Finished running 1 table model in 45.11s.
+2022-08-09 00:15:51.177018 (MainThread): Connection 'master' was left open.
+2022-08-09 00:15:51.177453 (MainThread): On master: Close
+2022-08-09 00:15:51.188670 (MainThread): Connection 'model.dbt_.trans_join' was left open.
+2022-08-09 00:15:51.189126 (MainThread): On model.dbt_.trans_join: Close
+2022-08-09 00:15:51.211852 (MainThread): 
+2022-08-09 00:15:51.219137 (MainThread): Completed successfully
+2022-08-09 00:15:51.219606 (MainThread): 
+Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+2022-08-09 00:15:51.220189 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb2d2cf2d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb2a087f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb2a087c90>]}
+2022-08-09 00:15:51.221119 (MainThread): Flushing usage events
+2022-08-09 00:16:12.403384 (MainThread): Running with dbt=0.16.1
+2022-08-09 00:16:12.808524 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.test.TestTask'>, data=False, debug=False, exclude=None, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/usr/local/airflow/dbt_/.dbt', project_dir=None, record_timing_info=None, rpc_method='test', schema=False, single_threaded=False, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, vars='{}', version_check=True, warn_error=False, which='test', write_json=True)
+2022-08-09 00:16:12.809463 (MainThread): Tracking: tracking
+2022-08-09 00:16:12.845839 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd18b4258d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd18b41bc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd18b41b910>]}
+2022-08-09 00:16:12.965592 (MainThread): Partial parsing not enabled
+2022-08-09 00:16:12.980654 (MainThread): Parsing macros/core.sql
+2022-08-09 00:16:13.009226 (MainThread): Parsing macros/materializations/helpers.sql
+2022-08-09 00:16:13.082522 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2022-08-09 00:16:13.101480 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2022-08-09 00:16:13.276221 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2022-08-09 00:16:13.357498 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2022-08-09 00:16:13.386680 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2022-08-09 00:16:13.405452 (MainThread): Parsing macros/materializations/seed/seed.sql
+2022-08-09 00:16:13.535527 (MainThread): Parsing macros/materializations/common/merge.sql
+2022-08-09 00:16:13.618293 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2022-08-09 00:16:13.642255 (MainThread): Parsing macros/materializations/view/view.sql
+2022-08-09 00:16:13.671226 (MainThread): Parsing macros/materializations/table/table.sql
+2022-08-09 00:16:13.702725 (MainThread): Parsing macros/adapters/common.sql
+2022-08-09 00:16:13.950564 (MainThread): Parsing macros/etc/get_custom_database.sql
+2022-08-09 00:16:13.955599 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2022-08-09 00:16:13.966496 (MainThread): Parsing macros/etc/get_relation_comment.sql
+2022-08-09 00:16:13.978151 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2022-08-09 00:16:13.982961 (MainThread): Parsing macros/etc/is_incremental.sql
+2022-08-09 00:16:13.992259 (MainThread): Parsing macros/etc/query.sql
+2022-08-09 00:16:13.997555 (MainThread): Parsing macros/etc/datetime.sql
+2022-08-09 00:16:14.182740 (MainThread): Parsing macros/schema_tests/not_null.sql
+2022-08-09 00:16:14.190151 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2022-08-09 00:16:14.206790 (MainThread): Parsing macros/schema_tests/unique.sql
+2022-08-09 00:16:14.226019 (MainThread): Parsing macros/schema_tests/relationships.sql
+2022-08-09 00:16:14.273782 (MainThread): Parsing macros/relations.sql
+2022-08-09 00:16:14.302420 (MainThread): Parsing macros/adapters.sql
+2022-08-09 00:16:14.458612 (MainThread): Parsing macros/catalog.sql
+2022-08-09 00:16:14.470296 (MainThread): Parsing macros/materializations/snapshot_merge.sql
+2022-08-09 00:16:14.569380 (MainThread): Partial parsing not enabled
+2022-08-09 00:16:14.713249 (MainThread): Acquiring new postgres connection "model.dbt_.trans_join".
+2022-08-09 00:16:14.713921 (MainThread): Opening a new connection, currently in state init
+2022-08-09 00:16:15.988372 (MainThread): WARNING: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_.example
+
+2022-08-09 00:16:17.304367 (MainThread): scipy not found, skipping conversion test.
+2022-08-09 00:16:17.315874 (MainThread): write_gpickle is deprecated and will be removed in 3.0.Use ``pickle.dump(G, path, protocol)``
+2022-08-09 00:16:17.317493 (MainThread): Found 1 model, 0 tests, 0 snapshots, 0 analyses, 127 macros, 0 operations, 0 seed files, 3 sources
+2022-08-09 00:16:17.328131 (MainThread): WARNING: Nothing to do. Try checking your model configs and model specification args
+2022-08-09 00:16:17.329178 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd17ad1cdd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd17ad27f50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd17ad27dd0>]}
+2022-08-09 00:16:17.330046 (MainThread): Flushing usage events
+2022-08-09 00:16:18.267590 (MainThread): Connection 'model.dbt_.trans_join' was properly closed.

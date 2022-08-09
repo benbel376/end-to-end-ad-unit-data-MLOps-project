@@ -85,7 +85,7 @@ joins2 as (
     g.sub_feature, 
     g.feature_value
     FROM joins as j
-    INNER JOIN source_global as g ON g.game_key = j.game_key
+    LEFT JOIN source_global as g ON g.game_key = j.game_key
 ),
 
 final as (
