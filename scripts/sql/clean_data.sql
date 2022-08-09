@@ -5,6 +5,16 @@ auction_id = REPLACE (
     auction_id,
     '-',
     ''
+),
+width = REPLACE (
+    height,
+    '%',
+    '0'
+),
+height = REPLACE (
+    height,
+    '%',
+    '0'
 );
 -- removing duplicates
 WITH
@@ -31,10 +41,20 @@ SET game_key = TRIM (game_key);
 
 --type casting
 ALTER TABLE source_campaign
-ALTER COLUMN width TYPE INT USING width::integer,
-ALTER COLUMN height TYPE INT USING height::integer,
-ALTER COLUMN platform_os TYPE INT USING platform_os::integer,
 ALTER COLUMN browser_ts 
    TYPE TIMESTAMP WITH TIME ZONE 
      USING to_timestamp(browser_ts, 'YYYY-MM-DD"T"HH24:MI:SS"Z"');
+
+ALTER TABLE source_briefing
+ALTER COLUMN buy_rate_cpe TYPE FLOAT USING buy_rate_cpe::float,
+ALTER COLUMN volume_agreed TYPE FLOAT USING volume_agreed::float,
+ALTER COLUMN gross_cost_or_budget TYPE FLOAT USING gross_cost_or_budget::float,
+ALTER COLUMN percentages TYPE FLOAT USING percentages::float,
+ALTER COLUMN startdate TYPE DATE using to_date(startdate, 'DD-MM-YYYY'),
+ALTER COLUMN enddate TYPE DATE using to_date(enddate, 'DD-MM-YYYY');
+
+-- droping some empty columns
+ALTER TABLE source_briefing
+  DROP COLUMN delivery_requirements,
+  DROP COLUMN flat_fee;
 

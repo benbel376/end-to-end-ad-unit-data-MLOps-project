@@ -33,8 +33,7 @@ joins as (
     b.StartDate, 
     b.EndDate,
     b.Serving_Location, 
-    b.Black_white_audience,
-    b.Delivery_Requirements, 
+    b.Black_white_audience, 
     b.Cost_Centre,
     b.Currency, 
     b.Buy_Rate_CPE, 
@@ -42,7 +41,6 @@ joins as (
     b.Gross_Cost_or_Budget,
     b.Agency_Fee, 
     b.Percentages, 
-    b.Flat_Fee, 
     b.Net_Cost
     FROM source_camp as c
     INNER JOIN source_brief as b ON c.campaign_id = b.campaign_id
@@ -73,7 +71,6 @@ joins2 as (
     j.EndDate,
     j.Serving_Location, 
     j.Black_white_audience,
-    j.Delivery_Requirements, 
     j.Cost_Centre,
     j.Currency, 
     j.Buy_Rate_CPE, 
@@ -81,7 +78,6 @@ joins2 as (
     j.Gross_Cost_or_Budget,
     j.Agency_Fee, 
     j.Percentages, 
-    j.Flat_Fee, 
     j.Net_Cost,
     g.design_feature, 
     g.feature_type, 
