@@ -50,6 +50,19 @@ def train(data):
 
     # apply text cleaner
     features2 = util.process_features(features)
+    # apply NLP
+
+    features3, enco = util.labeler(features2)
+
+    # train and test model
+    max_depth = 10
+    max_features = 0.75
+    n_estimators = 200
+
+    mod, par, metr = util.train(features3, target, max_depth, max_features, n_estimators)
+
+    # Check feature importance 
+    imp_image, importance = util.get_importance(mod, features3)
 
 def app():
 
