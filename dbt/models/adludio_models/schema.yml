@@ -32,3 +32,7 @@ models:
       - name: 
         tests: auction_id
           - unique
+      - name: 
+        tests: game_key
+          - unique
+          - not_null
