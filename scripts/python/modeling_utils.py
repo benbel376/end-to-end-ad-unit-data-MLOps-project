@@ -225,7 +225,14 @@ class Modeling_Utils:
 
 
     def clean_text(self, column):
-
+        """
+        Proceses text removing unwanted characters
+        Args:
+            column: the column to remove from
+        
+        Return:
+            processed_feature: cleaned column
+        """
         processed_feature = []
 
         for sentence in column:
