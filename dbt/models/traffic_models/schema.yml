@@ -19,3 +19,16 @@ sources:
 #       - name: creative_id
 #         tests:
 #           - non-null
+models:
+  - name: trans_join
+    columns:
+      - name: creative_id
+        tests:
+          - not_null
+      - name: types
+        tests:
+          - accepted_values:
+              values: ['impressions, 'click-through-event', 'first_dropped']
+      - name: 
+        tests: auction_id
+          - unique

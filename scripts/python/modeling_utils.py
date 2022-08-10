@@ -122,13 +122,14 @@ class Modeling_Utils:
     def labeler(self, df):
         df = df.copy()
         le = preprocessing.LabelEncoder()
+        labelers = []
         for x in df.columns:
             if df[x].dtypes=='object':
                 df[x]=le.fit_transform(df[x].astype(str))
-
+                labelers.append(le)
         print("successfully labeled")
 
-        return df, le
+        return df, labelers
 
     def find_agg(self, df, group_columns, agg_columns, agg_metrics, new_columns):
         """
@@ -352,7 +353,7 @@ class Modeling_Utils:
     def load_model(self):
         # Read data from file:
         manifest = None
-        with open( "../models/manifest.json", 'w' ) as f4:
+        with open( "../models/manifest.json", 'rb' ) as f4:
             manifest = json.load(f4)
 
         model_name = f"../models/{manifest['model']}.pkl"
