@@ -46,7 +46,11 @@ class Ingest:
     def restructure(self, df1):
         """
         Restructures the dataframe into oen with multiple columns
+        Args:
+            df1: a dual column data frame to restructure
 
+        Returns:
+            df_new: a multi column restructrued dataframe.
         """
         cols = [[], [], [], [], [], []]
         try:
