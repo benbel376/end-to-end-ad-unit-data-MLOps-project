@@ -1,6 +1,6 @@
-CREATE EXTENSION IF NOT EXISTS dblink;
-DROP TABLE IF EXISTS source_campaign;
-CREATE TABLE source_campaign
+CREATE EXTENSION IF NOT EXISTS dblink; -- used to transfer data between databases
+DROP TABLE IF EXISTS source_campaign;  -- added becasuse the data in staging shouldn't be stored permanently
+CREATE TABLE source_campaign           -- Create the table that temporarily holds the campaign inventory data
 AS
 SELECT *
 FROM dblink('host=postgres
@@ -22,9 +22,10 @@ FROM dblink('host=postgres
                             platform_os TEXT,
                             device_type TEXT, 
                             browser TEXT);
-
-DROP TABLE IF EXISTS source_briefing;
-CREATE TABLE source_briefing
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS source_briefing;       -- added becasuse the data in staging shouldn't be stored permanently 
+CREATE TABLE source_briefing                -- Create the table that temporarily holds the briefing data
 AS
 SELECT *
 FROM dblink('host=postgres
@@ -55,8 +56,11 @@ FROM dblink('host=postgres
                             Flat_Fee TEXT, 
                             Net_Cost TEXT);
 
-DROP TABLE IF EXISTS source_global_design;
-CREATE TABLE source_global_design
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS source_global_design;  -- added becasuse the data in staging shouldn't be stored permanently
+CREATE TABLE source_global_design           -- Create the table that temporarily holds the design features data
 AS
 SELECT *
 FROM dblink('host=postgres

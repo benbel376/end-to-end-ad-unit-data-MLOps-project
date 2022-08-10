@@ -1,3 +1,5 @@
+
+-- replacing string parts for eaither conversion and comparison
 UPDATE 
 source_campaign
 SET 
@@ -16,6 +18,7 @@ height = REPLACE (
     '%',
     '0'
 );
+
 -- removing duplicates
 WITH
 cte
@@ -31,6 +34,7 @@ DELETE FROM source_campaign
        WHERE cte.rn > 1
              AND cte.ctid = source_campaign.ctid;
 
+
 -- trimming some columns
 UPDATE source_campaign
 SET game_key = TRIM (game_key),
@@ -38,6 +42,7 @@ SET game_key = TRIM (game_key),
 
 UPDATE source_global_design
 SET game_key = TRIM (game_key);
+
 
 --type casting
 ALTER TABLE source_campaign
@@ -52,6 +57,7 @@ ALTER COLUMN gross_cost_or_budget TYPE FLOAT USING gross_cost_or_budget::float,
 ALTER COLUMN percentages TYPE FLOAT USING percentages::float,
 ALTER COLUMN startdate TYPE DATE using to_date(startdate, 'DD-MM-YYYY'),
 ALTER COLUMN enddate TYPE DATE using to_date(enddate, 'DD-MM-YYYY');
+
 
 -- droping some empty columns
 ALTER TABLE source_briefing
