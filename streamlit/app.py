@@ -78,8 +78,8 @@ def app():
     agency_fee = st.text_input("agency_fee", "agency_fee")
 
 
-    calculate = st.button('Calculate')
-    if ((uploaded_file is not None) and (calculate)):
+    trains = st.button('Calculate')
+    if ((calculate)):
         input = pd.read_csv(uploaded_file)
         new_df = input[select_list]
         new_df.insert(1, 'Assortment', Assortment)

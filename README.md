@@ -51,7 +51,7 @@ Campaign & creative plan data.
 Creative Assets(Creative_assets_) Zipped File
 The data contains images for particular game keys. Use computer vision to extract features that enrich the already existing features in design data.
 
-> please check this [dbt doc] to get a beter insight into the data
+> please check this [dbt doc](https://spontaneous-kleicha-67cc77.netlify.app/) to get a beter insight into the data
 
 
 
