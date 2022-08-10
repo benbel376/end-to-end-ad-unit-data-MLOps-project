@@ -66,8 +66,8 @@ def train(data):
 
 def app():
 
-    st.title("Predict Likilihood")
-    st.subheader("This model will predict the sales and number of customers on a specified date")
+    st.title("Predict Likelihood")
+    st.subheader("This model will predict the likelihood of engagement or click-through-event" )
     Width= st.number_input("width", min_value=0, max_value=3115)
     site_name = st.text_input("site_name", "site_name")
     platform_os = st.text_input("platform_os", "platform_os")
