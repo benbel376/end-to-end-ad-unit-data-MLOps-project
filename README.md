@@ -33,9 +33,7 @@
 
 ### About Adludio business 
 > Adludio is an online mobile ad business. It provides the following service to its clients
-Design an interactive Ad - what is also called a “creative”. A creative is a rich ad containing interaction elements through a mini-game engine, video, text, images, etc.. 
-Serves these creatives to audiences on behalf of a client. In order to do that, adludio buys impressions from an open market through bidding.  
-In order to make a good profit while also satisfying clients' needs, adludio employs campaign managers and bidding and other algorithms to optimize the bidding strategy. One of the algorithms we use is called inventory scoring i.e, ranking inventories such as site, and device type based on ads history performance. and it is used to optimize our targeting strategy.   
+Design an interactive Ad - what is also called a “creative”. Serves these creatives to audiences on behalf of a client. In order to do that, adludio buys impressions from an open market through bidding.   
 
 
 
