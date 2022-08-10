@@ -48,7 +48,9 @@ Campaign historical performance dataset. It contains historical inventories of t
 Briefs data (briefing.csv)
 Campaign & creative plan data. 
 Creative Assets(Creative_assets_) Zipped File
-The data contains images for particular game keys. Use computer vision to extract features that enrich the already existing features in design data. Hint: The naming convention of the images(to identify the game key), change ‘-’ to ‘/’.
+The data contains images for particular game keys. Use computer vision to extract features that enrich the already existing features in design data.
+
+> please check this [dbt doc] to get a beter insight into the data
 
 
 
