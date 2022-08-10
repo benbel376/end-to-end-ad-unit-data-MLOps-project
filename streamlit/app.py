@@ -25,23 +25,31 @@ util = Modeling_Utils()
 
 connection, cursor = man.connect_to_server(host="localhost", port=5432, user="warehouse", password="warehouse", dbName="warehouse")
 data = man.fetch_data(conn=connection, limit=10000)
-def train():
+def train(data):
+    data2 = util.reduce_dim_missing(data, 30)
+
+    # applying the mode based missing filler
+    data3 = util.fill_missing_by_mode(data2)
     
-    
-    plt.figure(figsize=(15, 7))
-    sns.set(style="ticks")
-    sns.set(font_scale = 2)
-    sns.set_style("white")
-    sns.set_style("whitegrid")
-    sns.despine()
-    ax = sns.lineplot(x=df[df.columns[0]], y=df[df.columns[1]])
-    ax.spines['left'].set_linewidth(5)
-    ax.spines['bottom'].set_linewidth(5)
-    ax.spines['left'].set_color('black')
-    ax.spines['bottom'].set_color('black')
-    plt.title(title)
-    plt.savefig("temp_image.png")
-    st.image("temp_image.png")
+    # apply mean based missing value filler
+    data4 = util.fill_missing_by_mean(data3)
+
+    # apply correlation based variable remover
+    data5 = util.remove_correlated(data4, 0.6)
+
+    # remove the blacklist variables (ids, dates, etc...)
+    blacklist = ["game_key", "browser_ts", "creative_id", 
+                "auction_id", "campaign_id", "campaign_name", 
+                "descriptions", "kpis", "black_white_audience", "submission_date"]
+
+    # apply blacklist remover
+    data6 = util.remove_cols(df=data5, cols=blacklist)
+
+    target = data6["types"]
+    features = util.remove_cols(data6, ["types"])
+
+    # apply text cleaner
+    features2 = util.process_features(features)
 
 def app():
 
