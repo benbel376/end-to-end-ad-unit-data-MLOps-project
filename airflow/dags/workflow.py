@@ -107,5 +107,10 @@ with DAG(dag_id="workflow",template_searchpath='includes/sql/',default_args=defa
                     postgres_conn_id="2warehouse",
                     sql="loading.sql",
                 )
+    dbt_doc = BashOperator(
+                    task_id="dbt_doc",
+                    bash_command=f"cd ~/dbt_ && ~/.local/bin/dbt docs generate --profiles-dir {DBT_PROFILE_DIR} && ~/.local/bin/dbt docs serve --port 7211 --profiles-dir {DBT_PROFILE_DIR}",
+                )
 
 task >> run_json_extract >> run_ingestion >> run_extraction >> run_preprocessing >> run_transformation >> run_tests >> run_loading
+run_transformation >> dbt_doc

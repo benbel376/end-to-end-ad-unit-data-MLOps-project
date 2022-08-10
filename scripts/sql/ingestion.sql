@@ -1,7 +1,7 @@
-CREATE EXTENSION IF NOT EXISTS dblink;
+CREATE EXTENSION IF NOT EXISTS dblink;          -- used to transfer data between databases
 
-DROP TABLE IF EXISTS campaign_inventory;
-CREATE TABLE IF NOT EXISTS campaign_inventory (
+DROP TABLE IF EXISTS campaign_inventory;        -- added for development purpose; it wont be present in production
+CREATE TABLE IF NOT EXISTS campaign_inventory ( -- the start of table creation for the campaign_inventory
     types TEXT, 
     width TEXT, 
     height TEXT, 
@@ -16,8 +16,11 @@ CREATE TABLE IF NOT EXISTS campaign_inventory (
     device_type TEXT, 
     browser TEXT);
 
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
 DROP TABLE IF EXISTS briefing;
-CREATE TABLE IF NOT EXISTS briefing (
+CREATE TABLE IF NOT EXISTS briefing (           -- the start of the data lake table for briefing
     campaign_id TEXT, 
     campaign_name TEXT, 
     Submission_Date TEXT, 
@@ -40,14 +43,20 @@ CREATE TABLE IF NOT EXISTS briefing (
     Flat_Fee TEXT, 
     Net_Cost TEXT);
 
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
 DROP TABLE IF EXISTS global_design;
-CREATE TABLE IF NOT EXISTS global_design (
+CREATE TABLE IF NOT EXISTS global_design (    -- the start of the data lake table for design data
     game_key TEXT, 
     design_feature TEXT, 
     feature_type TEXT, 
     feature_variety TEXT,
     sub_feature TEXT, 
     feature_value TEXT);
+
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 COPY campaign_inventory (
     types, 
@@ -67,6 +76,9 @@ COPY campaign_inventory (
 FROM '/usr/local/postgres/data/campaigns_inventory_updated.csv'
 DELIMITER ','
 CSV HEADER;
+
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 COPY briefing (
     campaign_id, 
@@ -95,6 +107,8 @@ FROM '/usr/local/postgres/data/briefing.csv'
 DELIMITER ','
 CSV HEADER;
 
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 COPY global_design (
     game_key, 
