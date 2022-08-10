@@ -1,0 +1,5 @@
+outs:
+- md5: a46475bd7fa19d50eaf499ced5f64c5a
+  size: 111849
+  isexec: true
+  path: briefing.csv

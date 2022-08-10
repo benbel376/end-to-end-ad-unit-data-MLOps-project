@@ -1,0 +1,5 @@
+outs:
+- md5: cb7e8ddcd106fda341377667b11a2d79
+  size: 9217963
+  isexec: true
+  path: global_design_data.json
