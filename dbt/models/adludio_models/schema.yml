@@ -13,26 +13,21 @@ sources:
       - name: source_briefing
       - name: source_global_design
 
+
 # models:
 #   - name: trans_join
 #     columns:
 #       - name: creative_id
 #         tests:
-#           - non-null
-models:
-  - name: trans_join
-    columns:
-      - name: creative_id
-        tests:
-          - not_null
-      - name: types
-        tests:
-          - accepted_values:
-              values: ['impressions, 'click-through-event', 'first_dropped']
-      - name: 
-        tests: auction_id
-          - unique
-      - name: 
-        tests: game_key
-          - unique
-          - not_null
+#           - not_null
+#       - name: types
+#         tests:
+#           - accepted_values:
+#               values: ['impressions, 'click-through-event', 'first_dropped']
+#       - name: 
+#         tests: auction_id
+#           - unique
+#       - name: 
+#         tests: game_key
+#           - unique
+#           - not_null

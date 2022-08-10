@@ -34294,3 +34294,421 @@ There are 1 unused configuration paths:
 2022-08-10 05:01:10.615237 (MainThread): Press Ctrl+C to exit.
 
 
+2022-08-10 12:24:51.873093 (MainThread): Running with dbt=0.16.1
+2022-08-10 12:24:52.558051 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, exclude=None, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/usr/local/airflow/dbt_/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', single_threaded=False, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2022-08-10 12:24:52.605050 (MainThread): Tracking: tracking
+2022-08-10 12:24:52.685126 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f83020b1e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82fe779ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82fe6cc750>]}
+2022-08-10 12:24:52.804339 (MainThread): Partial parsing not enabled
+2022-08-10 12:24:52.849306 (MainThread): Parsing macros/core.sql
+2022-08-10 12:24:52.926870 (MainThread): Parsing macros/materializations/helpers.sql
+2022-08-10 12:24:52.979945 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2022-08-10 12:24:53.004635 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2022-08-10 12:24:53.142481 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2022-08-10 12:24:53.247451 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2022-08-10 12:24:53.291447 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2022-08-10 12:24:53.301604 (MainThread): Parsing macros/materializations/seed/seed.sql
+2022-08-10 12:24:53.426024 (MainThread): Parsing macros/materializations/common/merge.sql
+2022-08-10 12:24:53.516758 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2022-08-10 12:24:53.565813 (MainThread): Parsing macros/materializations/view/view.sql
+2022-08-10 12:24:53.601708 (MainThread): Parsing macros/materializations/table/table.sql
+2022-08-10 12:24:53.651074 (MainThread): Parsing macros/adapters/common.sql
+2022-08-10 12:24:53.875214 (MainThread): Parsing macros/etc/get_custom_database.sql
+2022-08-10 12:24:53.894230 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2022-08-10 12:24:53.904671 (MainThread): Parsing macros/etc/get_relation_comment.sql
+2022-08-10 12:24:53.923854 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2022-08-10 12:24:53.946410 (MainThread): Parsing macros/etc/is_incremental.sql
+2022-08-10 12:24:53.977434 (MainThread): Parsing macros/etc/query.sql
+2022-08-10 12:24:53.989591 (MainThread): Parsing macros/etc/datetime.sql
+2022-08-10 12:24:54.044742 (MainThread): Parsing macros/schema_tests/not_null.sql
+2022-08-10 12:24:54.058877 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2022-08-10 12:24:54.083727 (MainThread): Parsing macros/schema_tests/unique.sql
+2022-08-10 12:24:54.109798 (MainThread): Parsing macros/schema_tests/relationships.sql
+2022-08-10 12:24:54.168414 (MainThread): Parsing macros/relations.sql
+2022-08-10 12:24:54.198965 (MainThread): Parsing macros/adapters.sql
+2022-08-10 12:24:54.293057 (MainThread): Parsing macros/catalog.sql
+2022-08-10 12:24:54.314044 (MainThread): Parsing macros/materializations/snapshot_merge.sql
+2022-08-10 12:24:54.431008 (MainThread): Partial parsing not enabled
+2022-08-10 12:24:54.645149 (MainThread): Acquiring new postgres connection "model.dbt_.trans_join".
+2022-08-10 12:24:54.645840 (MainThread): Opening a new connection, currently in state init
+2022-08-10 12:24:54.747073 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82fe6f40d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82fe808e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82fbeb8590>]}
+2022-08-10 12:24:54.748403 (MainThread): Flushing usage events
+2022-08-10 12:24:56.054220 (MainThread): Connection 'model.dbt_.trans_join' was properly closed.
+2022-08-10 12:24:56.061859 (MainThread): Encountered an error:
+2022-08-10 12:24:56.062896 (MainThread): Compilation Error
+  Error reading dbt_: adludio_models/schema.yml - Runtime Error
+    Syntax error near line 31
+    ------------------------------
+    28 |       - name: types
+    29 |         tests:
+    30 |           - accepted_values:
+    31 |               values: ['impressions, 'click-through-event', 'first_dropped']
+    32 |       - name: 
+    33 |         tests: auction_id
+    34 |           - unique
+    
+    Raw Error:
+    ------------------------------
+    while parsing a flow sequence
+      in "<unicode string>", line 31, column 23:
+                      values: ['impressions, 'click-through-ev ... 
+                              ^
+    expected ',' or ']', but got '<scalar>'
+      in "<unicode string>", line 31, column 39:
+         ...         values: ['impressions, 'click-through-event', 'first_dro ... 
+                                             ^
+2022-08-10 12:24:56.294154 (MainThread): Traceback (most recent call last):
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/clients/yaml_helper.py", line 49, in load_yaml_text
+    return yaml.safe_load(contents)
+  File "/usr/local/lib/python3.7/site-packages/yaml/__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "/usr/local/lib/python3.7/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/usr/local/lib/python3.7/site-packages/yaml/constructor.py", line 41, in get_single_data
+    node = self.get_single_node()
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 111, in compose_sequence_node
+    node.value.append(self.compose_node(node, index))
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 111, in compose_sequence_node
+    node.value.append(self.compose_node(node, index))
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 111, in compose_sequence_node
+    node.value.append(self.compose_node(node, index))
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 110, in compose_sequence_node
+    while not self.check_event(SequenceEndEvent):
+  File "/usr/local/lib/python3.7/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "/usr/local/lib/python3.7/site-packages/yaml/parser.py", line 484, in parse_flow_sequence_entry
+    "expected ',' or ']', but got %r" % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a flow sequence
+  in "<unicode string>", line 31, column 23:
+                  values: ['impressions, 'click-through-ev ... 
+                          ^
+expected ',' or ']', but got '<scalar>'
+  in "<unicode string>", line 31, column 39:
+     ...         values: ['impressions, 'click-through-event', 'first_dro ... 
+                                         ^
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/schemas.py", line 163, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/clients/yaml_helper.py", line 56, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 31
+  ------------------------------
+  28 |       - name: types
+  29 |         tests:
+  30 |           - accepted_values:
+  31 |               values: ['impressions, 'click-through-event', 'first_dropped']
+  32 |       - name: 
+  33 |         tests: auction_id
+  34 |           - unique
+  
+  Raw Error:
+  ------------------------------
+  while parsing a flow sequence
+    in "<unicode string>", line 31, column 23:
+                    values: ['impressions, 'click-through-ev ... 
+                            ^
+  expected ',' or ']', but got '<scalar>'
+    in "<unicode string>", line 31, column 39:
+       ...         values: ['impressions, 'click-through-event', 'first_dro ... 
+                                           ^
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/main.py", line 81, in main
+    results, succeeded = handle_and_check(args)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/main.py", line 159, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/main.py", line 212, in run_from_args
+    results = task.run()
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/task/runnable.py", line 351, in run
+    self._runtime_initialize()
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/task/runnable.py", line 107, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/task/runnable.py", line 75, in _runtime_initialize
+    self.load_manifest()
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/task/runnable.py", line 63, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/perf_utils.py", line 23, in get_full_manifest
+    return load_manifest(config, internal, set_header)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/manifest.py", line 646, in load_manifest
+    return ManifestLoader.load_all(config, internal_manifest, macro_hook)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/manifest.py", line 336, in load_all
+    loader.load(internal_manifest=internal_manifest)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/manifest.py", line 208, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/manifest.py", line 182, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/manifest.py", line 138, in parse_with_cache
+    parser.parse_file(block)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/schemas.py", line 283, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/schemas.py", line 168, in _yaml_from_file
+    .format(self.project.project_name, path, reason)
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading dbt_: adludio_models/schema.yml - Runtime Error
+    Syntax error near line 31
+    ------------------------------
+    28 |       - name: types
+    29 |         tests:
+    30 |           - accepted_values:
+    31 |               values: ['impressions, 'click-through-event', 'first_dropped']
+    32 |       - name: 
+    33 |         tests: auction_id
+    34 |           - unique
+    
+    Raw Error:
+    ------------------------------
+    while parsing a flow sequence
+      in "<unicode string>", line 31, column 23:
+                      values: ['impressions, 'click-through-ev ... 
+                              ^
+    expected ',' or ']', but got '<scalar>'
+      in "<unicode string>", line 31, column 39:
+         ...         values: ['impressions, 'click-through-event', 'first_dro ... 
+                                             ^
+
+2022-08-10 12:29:32.726286 (MainThread): Running with dbt=0.16.1
+2022-08-10 12:29:33.207885 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, exclude=None, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/usr/local/airflow/dbt_/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', single_threaded=False, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2022-08-10 12:29:33.252698 (MainThread): Tracking: tracking
+2022-08-10 12:29:33.327236 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3c8546c4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3c855fd8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3c85592b50>]}
+2022-08-10 12:29:33.533130 (MainThread): Partial parsing not enabled
+2022-08-10 12:29:33.591964 (MainThread): Parsing macros/core.sql
+2022-08-10 12:29:33.636155 (MainThread): Parsing macros/materializations/helpers.sql
+2022-08-10 12:29:33.700017 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2022-08-10 12:29:33.780090 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2022-08-10 12:29:33.957629 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2022-08-10 12:29:34.141324 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2022-08-10 12:29:34.222542 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2022-08-10 12:29:34.268017 (MainThread): Parsing macros/materializations/seed/seed.sql
+2022-08-10 12:29:34.390588 (MainThread): Parsing macros/materializations/common/merge.sql
+2022-08-10 12:29:34.470474 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2022-08-10 12:29:34.508117 (MainThread): Parsing macros/materializations/view/view.sql
+2022-08-10 12:29:34.554895 (MainThread): Parsing macros/materializations/table/table.sql
+2022-08-10 12:29:34.615621 (MainThread): Parsing macros/adapters/common.sql
+2022-08-10 12:29:34.817487 (MainThread): Parsing macros/etc/get_custom_database.sql
+2022-08-10 12:29:34.847543 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2022-08-10 12:29:34.857407 (MainThread): Parsing macros/etc/get_relation_comment.sql
+2022-08-10 12:29:34.877085 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2022-08-10 12:29:34.910702 (MainThread): Parsing macros/etc/is_incremental.sql
+2022-08-10 12:29:34.941506 (MainThread): Parsing macros/etc/query.sql
+2022-08-10 12:29:34.954032 (MainThread): Parsing macros/etc/datetime.sql
+2022-08-10 12:29:35.053436 (MainThread): Parsing macros/schema_tests/not_null.sql
+2022-08-10 12:29:35.089915 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2022-08-10 12:29:35.114705 (MainThread): Parsing macros/schema_tests/unique.sql
+2022-08-10 12:29:35.152351 (MainThread): Parsing macros/schema_tests/relationships.sql
+2022-08-10 12:29:35.188425 (MainThread): Parsing macros/relations.sql
+2022-08-10 12:29:35.219827 (MainThread): Parsing macros/adapters.sql
+2022-08-10 12:29:35.357971 (MainThread): Parsing macros/catalog.sql
+2022-08-10 12:29:35.399888 (MainThread): Parsing macros/materializations/snapshot_merge.sql
+2022-08-10 12:29:35.614440 (MainThread): Partial parsing not enabled
+2022-08-10 12:29:35.989156 (MainThread): Acquiring new postgres connection "model.dbt_.trans_join".
+2022-08-10 12:29:35.989621 (MainThread): Opening a new connection, currently in state init
+2022-08-10 12:29:36.111204 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3c854b56d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3c82c96d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3c82c37090>]}
+2022-08-10 12:29:36.111948 (MainThread): Flushing usage events
+2022-08-10 12:29:37.289120 (MainThread): Connection 'model.dbt_.trans_join' was properly closed.
+2022-08-10 12:29:37.290704 (MainThread): Encountered an error:
+2022-08-10 12:29:37.291199 (MainThread): Compilation Error
+  Error reading dbt_: adludio_models/schema.yml - Runtime Error
+    Syntax error near line 31
+    ------------------------------
+    28 |       - name: types
+    29 |         tests:
+    30 |           - accepted_values:
+    31 |               values: ['impressions, 'click-through-event', 'first_dropped']
+    32 |       - name: 
+    33 |         tests: auction_id
+    34 |           - unique
+    
+    Raw Error:
+    ------------------------------
+    while parsing a flow sequence
+      in "<unicode string>", line 31, column 23:
+                      values: ['impressions, 'click-through-ev ... 
+                              ^
+    expected ',' or ']', but got '<scalar>'
+      in "<unicode string>", line 31, column 39:
+         ...         values: ['impressions, 'click-through-event', 'first_dro ... 
+                                             ^
+2022-08-10 12:29:37.407663 (MainThread): Traceback (most recent call last):
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/clients/yaml_helper.py", line 49, in load_yaml_text
+    return yaml.safe_load(contents)
+  File "/usr/local/lib/python3.7/site-packages/yaml/__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "/usr/local/lib/python3.7/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/usr/local/lib/python3.7/site-packages/yaml/constructor.py", line 41, in get_single_data
+    node = self.get_single_node()
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 111, in compose_sequence_node
+    node.value.append(self.compose_node(node, index))
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 111, in compose_sequence_node
+    node.value.append(self.compose_node(node, index))
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 111, in compose_sequence_node
+    node.value.append(self.compose_node(node, index))
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 82, in compose_node
+    node = self.compose_sequence_node(anchor)
+  File "/usr/local/lib/python3.7/site-packages/yaml/composer.py", line 110, in compose_sequence_node
+    while not self.check_event(SequenceEndEvent):
+  File "/usr/local/lib/python3.7/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "/usr/local/lib/python3.7/site-packages/yaml/parser.py", line 484, in parse_flow_sequence_entry
+    "expected ',' or ']', but got %r" % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a flow sequence
+  in "<unicode string>", line 31, column 23:
+                  values: ['impressions, 'click-through-ev ... 
+                          ^
+expected ',' or ']', but got '<scalar>'
+  in "<unicode string>", line 31, column 39:
+     ...         values: ['impressions, 'click-through-event', 'first_dro ... 
+                                         ^
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/schemas.py", line 163, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/clients/yaml_helper.py", line 56, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 31
+  ------------------------------
+  28 |       - name: types
+  29 |         tests:
+  30 |           - accepted_values:
+  31 |               values: ['impressions, 'click-through-event', 'first_dropped']
+  32 |       - name: 
+  33 |         tests: auction_id
+  34 |           - unique
+  
+  Raw Error:
+  ------------------------------
+  while parsing a flow sequence
+    in "<unicode string>", line 31, column 23:
+                    values: ['impressions, 'click-through-ev ... 
+                            ^
+  expected ',' or ']', but got '<scalar>'
+    in "<unicode string>", line 31, column 39:
+       ...         values: ['impressions, 'click-through-event', 'first_dro ... 
+                                           ^
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/main.py", line 81, in main
+    results, succeeded = handle_and_check(args)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/main.py", line 159, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/main.py", line 212, in run_from_args
+    results = task.run()
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/task/runnable.py", line 351, in run
+    self._runtime_initialize()
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/task/runnable.py", line 107, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/task/runnable.py", line 75, in _runtime_initialize
+    self.load_manifest()
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/task/runnable.py", line 63, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/perf_utils.py", line 23, in get_full_manifest
+    return load_manifest(config, internal, set_header)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/manifest.py", line 646, in load_manifest
+    return ManifestLoader.load_all(config, internal_manifest, macro_hook)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/manifest.py", line 336, in load_all
+    loader.load(internal_manifest=internal_manifest)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/manifest.py", line 208, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/manifest.py", line 182, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/manifest.py", line 138, in parse_with_cache
+    parser.parse_file(block)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/schemas.py", line 283, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/dbt/parser/schemas.py", line 168, in _yaml_from_file
+    .format(self.project.project_name, path, reason)
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading dbt_: adludio_models/schema.yml - Runtime Error
+    Syntax error near line 31
+    ------------------------------
+    28 |       - name: types
+    29 |         tests:
+    30 |           - accepted_values:
+    31 |               values: ['impressions, 'click-through-event', 'first_dropped']
+    32 |       - name: 
+    33 |         tests: auction_id
+    34 |           - unique
+    
+    Raw Error:
+    ------------------------------
+    while parsing a flow sequence
+      in "<unicode string>", line 31, column 23:
+                      values: ['impressions, 'click-through-ev ... 
+                              ^
+    expected ',' or ']', but got '<scalar>'
+      in "<unicode string>", line 31, column 39:
+         ...         values: ['impressions, 'click-through-event', 'first_dro ... 
+                                             ^
+
