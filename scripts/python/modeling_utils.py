@@ -35,6 +35,12 @@ class Modeling_Utils:
     def summ_columns(self, df, unique=True):
         """
         shows columns and their missing values along with data types.
+        Args:
+            df: a dataframe to sumarrize.
+            unique: whether to include uniqe value count
+
+        Returns:
+            df2: a summary datafrme.
         """
         df1 = df.copy()
         df2 = df1.isna().sum().to_frame().reset_index()
@@ -56,6 +62,11 @@ class Modeling_Utils:
     def reduce_dim_missing(self, df,limit):
         """
         removes columns with number of missing values greater than the provided limit
+        ARgs:
+            df: the dataframe to reduce in dimension
+            limit: the trushold percentage of missing values to use as a reference for removal
+        Returns
+            r_df: reduced dataframe.
         """
         temp = self.summ_columns(df)
         rem_lis = []
@@ -73,6 +84,8 @@ class Modeling_Utils:
     def fill_missing_by_mode(self, df, cols=None):
         """
         fills missing values by mode
+        ARgs:
+            df: the dataframe to fill
         """
         df = df.copy()
         mod_fill_list = []
@@ -97,6 +110,10 @@ class Modeling_Utils:
     def fill_missing_by_mean(self, df, cols=None):
         """
         fills missing values by mean
+        ARgs:
+            df: the dataframe to fill
+        Returns: 
+            df: a dataframe filled.
         """
         df = df.copy()
         temp = self.summ_columns(df)
@@ -120,6 +137,14 @@ class Modeling_Utils:
     # remove those with high correlation
     # label encoding
     def labeler(self, df):
+        """
+        a one hot encoder
+        Args: 
+            df: the dataframe to encode
+        
+        Returns
+            df: encoded dataframe.
+        """
         df = df.copy()
         le = preprocessing.LabelEncoder()
         labelers = []
