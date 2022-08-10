@@ -50,33 +50,11 @@ def app():
     Width= st.number_input("width", min_value=0, max_value=3115)
     site_name = st.text_input("site_name", "site_name")
     platform_os = st.text_input("platform_os", "platform_os")
-    StoreType = 0
-    StoreTypes = st.radio(
-    "What is the store type",
-    ('A', 'B', 'C', 'D'))
-
-    if StoreTypes == 'A':
-        StoreType = 0
-    elif StoreTypes == 'B':
-        StoreType = 1
-    elif StoreTypes == 'C':
-        StoreType = 2
-    else:
-        StoreType = 3
-
-    Assortment = 0
-    assort = st.radio(
-    "What is the assortment of the store",
-    ('Basic', 'Extra', 'Extended'))
-
-    if assort == 'Basic':
-        Assortment = 0
-    elif assort == 'Extra':
-        Assortment = 1
-    else:
-        Assortment = 2
-
-
+    device_type = st.text_input("device_type", "device_type")
+    browser = st.text_input("browser", "browser")
+    startdate = st.text_input("startdate", "startdate")
+    volume_agreed = st.text_input("volume_agreed", "volume_agreed")
+    agency_fee = st.text_input("agency_fee", "agency_fee")
 
 
     calculate = st.button('Calculate')
