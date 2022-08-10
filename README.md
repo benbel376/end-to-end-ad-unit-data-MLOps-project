@@ -104,12 +104,15 @@ The data contains images for particular game keys. Use computer vision to extrac
   to the warehouse, using either the pgadmin application or redash.
 > You can quickly run the queries found in redash_visual.sql to generate a dashboard in redash.
 ### Future Upgrades
+- create a better model for the data. For the json data, I have noticed now that a better structure would be the following: [game_key, color_enga, color_click, text_eng, text_clic, video_eng, ...] this way of organizing the data
+enables one to easily use the data for machine learning.
 - integrate the machine learning training code into the airflow pipeline for better automation
 - use more strong tests in dbt to make sure the data is they way it is expected.
 - Integrate the data extracted from the images into the pipeline so that it can be used during training and
  EDA.
 - Use dvc to orchestrate the machine learning pipeline, while airflow contols dvc.
 - use mlflow as a server for the models.
+- 
 
 <!-- CONTRIBUTING -->
 ## Contributing
