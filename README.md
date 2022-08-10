@@ -103,6 +103,22 @@ The data contains images for particular game keys. Use computer vision to extrac
 - Once all tasks complete executing, you can verify that the data is successfully transfered
   to the warehouse, using either the pgadmin application or redash.
 > You can quickly run the queries found in redash_visual.sql to generate a dashboard in redash.
+### Future Upgrades
+- integrate the machine learning training code into the airflow pipeline for better automation
+- use more strong tests in dbt to make sure the data is they way it is expected.
+- Integrate the data extracted from the images into the pipeline so that it can be used during training and
+ EDA.
+- Use dvc to orchestrate the machine learning pipeline, while airflow contols dvc.
+- use mlflow as a server for the models.
+
+<!-- CONTRIBUTING -->
+## Contributing
+Any contributions you decide to make are **greatly appreciated**.
+1. Fork the Project
+2. Create your Feature Branch
+3. Commit your Changes 
+4. Push to the Branch 
+5. Open a Pull Request
 
 ## License
 - [MIT License](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiMqbrwqaz5AhVPiqQKHa5uCtkQFnoECAYQAQ&url=https%3A%2F%2Fopensource.org%2Flicenses%2FMIT&usg=AOvVaw1MsEPekvPKCIceu2jiRDy4)
@@ -117,14 +133,7 @@ The data contains images for particular game keys. Use computer vision to extrac
 - Thank you [Adludio](https://www.adludio.com/) for this wonderful project.
 - Thank you [10 academy]((https://www.10academy.org/)) for preparing us for this kind of challenges.
 
-<!-- CONTRIBUTING -->
-## Contributing
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-1. Fork the Project
-2. Create your Feature Branch
-3. Commit your Changes 
-4. Push to the Branch 
-5. Open a Pull Request
+
 
 ## Show your support
 
