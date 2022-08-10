@@ -8,7 +8,8 @@
 
 # Adludio Data Engineering and Machine Learning Challenge
 ## The Data Pipeline
-![image](https://user-images.githubusercontent.com/44437166/183882188-001902e3-1054-4dc0-871b-c778a6c7499c.png)
+
+![image](https://user-images.githubusercontent.com/44437166/183901666-403a5cc4-d548-413a-b41d-8ecf99eb619a.png)
 **Table of contents**
 
 - [Overview](#overview)
