@@ -57,6 +57,7 @@ class Manager():
         cursor.close()
         print("connection closed and transaction committed")
 
+
     def execute_query(self, cursor, file_sql) -> None:
         """
         A function to execute sql queries
@@ -108,6 +109,7 @@ class Manager():
         except Exception as e:
             print(f"error: {e}")
 
+
     def close_connection(self, connection, cursor):
         """
         closes connection with database.
@@ -144,7 +146,6 @@ class Manager():
             except Exception as e:
                 print('command skipped: ', command)
                 print(e)
-        
 
 
     def insert_into_table(self, cursor, connection, dbName: str, df: pd.DataFrame, table_name: str) -> None:

@@ -8,6 +8,14 @@ class Ingest:
         pass
 
     def load_json(self, path):
+        """
+        loads a json file.
+        Args:
+            path: path of the file and its name
+
+        Return: 
+            Nested_json: the extracted json.
+        """
         with open(path) as json_file:
             nested_json = json.load(json_file)
         return nested_json
