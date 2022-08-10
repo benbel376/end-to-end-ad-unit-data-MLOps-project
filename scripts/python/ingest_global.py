@@ -21,6 +21,14 @@ class Ingest:
         return nested_json
 
     def flatten_json(self, nested_json):
+        """
+        flattens the nested json object into one with just one level
+        Args:
+            nested_json: a nested json object
+
+        Returns:
+            df: a dataframe 
+        """
         out = {}
         def flatten(x, name=''):
             if type(x) is dict:
@@ -36,6 +44,10 @@ class Ingest:
             print(e)
 
     def restructure(self, df1):
+        """
+        Restructures the dataframe into oen with multiple columns
+
+        """
         cols = [[], [], [], [], [], []]
         try:
             for i in range(len(df1)):
