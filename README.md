@@ -110,7 +110,8 @@ enables one to easily use the data for machine learning.
  EDA.
 - Use dvc to orchestrate the machine learning pipeline, while airflow contols dvc.
 - use mlflow as a server for the models.
-- Given the limited time, I wasn't able to implement fully the above tasks
+- Given the limited time, I wasn't able to extract a large number of features and rows of data from teh images.
+I only extracted few for sample
 
 <!-- CONTRIBUTING -->
 ## Contributing
