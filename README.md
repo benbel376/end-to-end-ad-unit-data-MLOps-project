@@ -8,8 +8,8 @@
 
 # Adludio Data Engineering and Machine Learning Challenge
 ## The Data Pipeline
+![image](https://user-images.githubusercontent.com/44437166/183916536-f56f6aa3-42c4-4099-a66d-3b002cf3b37a.png)
 
-![image](https://user-images.githubusercontent.com/44437166/183901666-403a5cc4-d548-413a-b41d-8ecf99eb619a.png)
 **Table of contents**
 
 - [Overview](#overview)
@@ -96,7 +96,7 @@ The data contains images for particular game keys. Use computer vision to extrac
 
 ## Usage
 ### For Development, Please refer the image below to understand the folder structure
-![image](https://user-images.githubusercontent.com/44437166/183892133-0f3fa22f-8258-4477-a34b-87b5718455b3.png)
+![image](https://user-images.githubusercontent.com/44437166/183901666-403a5cc4-d548-413a-b41d-8ecf99eb619a.png)
 
 ### For Normal Usage, follow the seps below.
 - Start by running the "workflow" dag from within the airflow.
